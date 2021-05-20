@@ -1,11 +1,9 @@
+import './style.css';
+
 function Project({ project }) {
 	return (
 		<div className={'col-lg-6 col-md-6 portfolio-item filter-' + project.type}>
-			<img
-				src={'./components/assets/img/portfolio/' + project.img + '.png'}
-				className='img-fluid'
-				alt={project.name}
-			/>
+			<img src={project.img} className='img-fluid' alt={project.name} />
 			<div className='portfolio-info justify-content-between'>
 				<div>
 					<h4>{project.name}</h4>
@@ -13,7 +11,7 @@ function Project({ project }) {
 				</div>
 				<div>
 					<a
-						href={'../assets/img/portfolio/' + project.img + '.png'}
+						href={project.img}
 						data-gall='portfolioGallery'
 						className='venobox preview-link'
 						title={project.name}

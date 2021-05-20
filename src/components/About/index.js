@@ -1,4 +1,6 @@
 import './style.css';
+import Image from '../assets/img/about.png';
+import Resume from '../assets/pdfs/Resume.pdf';
 
 function About() {
 	return (
@@ -6,7 +8,7 @@ function About() {
 			<div className='container'>
 				<div className='row'>
 					<div className='col-lg-6 order-1 order-lg-2' data-aos='fade-left'>
-						<img src='assets/img/about.png' className='img-fluid' alt='' />
+						<img src={Image} className='img-fluid' alt='' />
 					</div>
 					<div
 						className='col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content'
@@ -29,11 +31,7 @@ function About() {
 							Adelaide, while also having spent 4 years developing strength in
 							teamwork in hospitality.
 						</p>
-						<a
-							className='btn-get-started'
-							href='assets/pdfs/Resume.pdf'
-							download
-						>
+						<a className='btn-get-started' href={Resume} download>
 							{' '}
 							<i className='bx bxs-download'></i> Resume
 						</a>
