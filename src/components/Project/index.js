@@ -1,37 +1,44 @@
-import './style.css';
+import "./style.css";
+import Jgif from "../assets/joke-gif.png";
+import Jsquiz from "../assets/js-quiz.png";
+import Reschedule from "../assets/reschedule.png";
+import Weatherdb from "../assets/weather.png";
+import Teamprofile from "../assets/profile-generator.png";
+import Empdirectory from "../assets/directory.png";
 
 function Project({ project }) {
-	return (
-		<div className={'col-lg-6 col-md-6 portfolio-item filter-' + project.type}>
-			<img src={project.img} className='img-fluid' alt={project.name} />
-			<div className='portfolio-info justify-content-between'>
-				<div>
-					<h4>{project.name}</h4>
-					<p>{project.description}</p>
-				</div>
-				<div>
-					<a
-						href={project.img}
-						data-gall='portfolioGallery'
-						className='venobox preview-link'
-						title={project.name}
-					>
-						<i className='bx bx-plus'></i>
-					</a>
-					<a
-						href={project.deployedAt}
-						className='details-link'
-						title='More Details'
-					>
-						<i className='bx bx-link'></i>
-					</a>
-					<a href={project.repo} className='github-link' title='More Details'>
-						<i className='bx bxl-github'></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	);
+  let img = [Jgif, Jsquiz, Reschedule, Weatherdb, Teamprofile, Empdirectory];
+  return (
+    <div className={"col-lg-6 col-md-6 portfolio-item filter-" + project.type}>
+      <img src={img[project.key]} className="img-fluid" alt={project.name} />
+      <div className="portfolio-info justify-content-between">
+        <div>
+          <h4>{project.name}</h4>
+          <p>{project.description}</p>
+        </div>
+        <div>
+          <a
+            href={img[project.key]}
+            data-gall="portfolioGallery"
+            className="venobox preview-link"
+            title={project.name}
+          >
+            <i className="bx bx-plus"></i>
+          </a>
+          <a
+            href={project.deployedAt}
+            className="details-link"
+            title="More Details"
+          >
+            <i className="bx bx-link"></i>
+          </a>
+          <a href={project.repo} className="github-link" title="More Details">
+            <i className="bx bxl-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Project;
